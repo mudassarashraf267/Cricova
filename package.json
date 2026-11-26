@@ -1,0 +1,17 @@
+{
+  "name": "cricketpro",
+  "private": true,
+  "version": "0.2.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @cricketpro/web",
+    "build": "npm run build -w @cricketpro/web",
+    "test": "npm test -w @cricketpro/engine && npm test -w @cricketpro/api && npm test -w @cricketpro/web",
+    "e2e": "npm exec -w @cricketpro/web -- playwright test",
+    "typecheck": "npm run typecheck -w @cricketpro/engine && npm run typecheck -w @cricketpro/api && npm run typecheck -w @cricketpro/web",
+    "dev:api": "npm run dev -w @cricketpro/api"
+  }
+}
